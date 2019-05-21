@@ -1,0 +1,22 @@
+body{
+    background-image: url('/images/matese-fields-233175-unsplash.jpg');
+    background-size: cover;
+}
+
+
+.button {
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    background-color: #000;
+    padding: 30px 60px;
+    border-radius: 0px;
+    font-weight: 800;
+    font-size: 24px;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+}

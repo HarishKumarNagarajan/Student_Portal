@@ -1,0 +1,19 @@
+<html>
+    <head><title>Student Home Page</title>
+    </head>
+    <body>
+        <% var name = JSON.stringify(full[0].name);
+           var id = JSON.stringify(full[0].id);
+           var email = JSON.stringify(full[0].email);
+           var phone = JSON.stringify(full[0].phone); %>
+        <center>
+        <h1>Student Home Page</h1>
+        <br>
+        <br>
+        <h2><%= id.substr(1).slice(0, -1) %></h2>
+        <h2><%= name.substr(1).slice(0, -1) %></h2>
+        <h2><%= email.substr(1).slice(0, -1) %></h2>
+        <h2><%= phone.substr(1).slice(0, -1) %></h2> 
+    </center>
+    </body>
+</html>
