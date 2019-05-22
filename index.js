@@ -3,7 +3,7 @@ const app = express();
 var lg,alg;
 var s =[],pt = "",msg = "",apt="";
 var pg = require('pg');
-var conString = "postgres://postgres:password@localhost:5432/postgres";
+var conString = "postgres://postgres:Nagaraj_dhana99@localhost:5432/postgres";
 
 var client = new pg.Client(conString);
 async function start(){
@@ -49,10 +49,10 @@ function achk(n,p){
 	}
 }
 
-
+start();
 app.use(express.static(__dirname + '/public'));
 app.get("/",function(req,res){
-	start();
+	
 	rd();
     res.render("home.ejs");
 });
@@ -74,12 +74,17 @@ app.get("/login/:name/:pass", function(req,res){
 	{
 		//console.log("home");
 		pt = "";
-		res.render("studhome.ejs",{full: s});
+		res.redirect("/studhome");
 	}else
 	{
 		res.redirect("/register");
 	}
 });
+
+app.get("/studhome",function(req,res){
+	    res.render("studhome.ejs",{full: s});
+	});
+
 app.get("/alogin/:name/:pass", function(req,res){
 	
 	var qn = req.params.name;

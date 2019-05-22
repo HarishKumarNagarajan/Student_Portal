@@ -1,5 +1,24 @@
 <html>
     <head><title>Student Home Page</title>
+        <style>
+            body{
+                background-image: url('images/caleb-woods-275754-unsplash.jpg');
+                background-size: cover;
+                color: aliceblue;
+            }
+            </style>
+            <script>
+            function check() {
+  var txt;
+  var person = prompt("Please enter your name:", "");
+  if (person == null || person == "") {
+    alert("User cancelled the edit function..YOU MUST PROVIDE YOUR PASSWORD!!");
+  } else {
+    txt = person;
+  }
+  document.getElementById("demo").innerHTML = txt;
+}
+            </script>
     </head>
     <body>
         <% var name = JSON.stringify(full[0].name);
@@ -10,10 +29,35 @@
         <h1>Student Home Page</h1>
         <br>
         <br>
-        <h2><%= id.substr(1).slice(0, -1) %></h2>
-        <h2><%= name.substr(1).slice(0, -1) %></h2>
-        <h2><%= email.substr(1).slice(0, -1) %></h2>
-        <h2><%= phone.substr(1).slice(0, -1) %></h2> 
+        <input id="id" type="text" value="<%= id.substr(1).slice(0, -1) %>"/><br>
+        <input id="name" type="text" value="<%= name.substr(1).slice(0, -1) %>"/><br>
+        <input id="email" type="text" value="<%= email.substr(1).slice(0, -1) %>"/><br>
+        <input id="phone" type="text" value="<%= phone.substr(1).slice(0, -1) %>"/> <br><br>
+        <button id="edit" onclick="check()">EDIT</button><br><br>
+        <button id="update" >UPDATE</button>
     </center>
+
+    <script>
+            document.getElementById("update").disabled = true;
+            document.getElementById("id").disabled = true;
+            document.getElementById("name").disabled = true;
+            document.getElementById("email").disabled = true;
+            document.getElementById("phone").disabled = true;
+            </script>
+            <style>
+            h1{
+                color: #CCC;
+            }
+        input {
+            text-align: center;
+  margin-bottom:3px;
+  padding:20px;
+  width: 45%;
+  border:1px solid #CCC
+}
+button {
+  padding:10px
+}
+            </style>
     </body>
 </html>
